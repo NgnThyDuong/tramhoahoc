@@ -1,0 +1,404 @@
+/* =========================
+   1. CÀI ĐẶT CHUNG
+========================= */
+* { box-sizing: border-box; }
+:root { 
+    font-family: "Nunito", sans-serif; 
+    color: #2864b3; 
+    background: #eefaff; 
+}
+html { scroll-behavior: smooth; }
+body { 
+    margin: 0; 
+    min-width: 320px; 
+    background: linear-gradient(
+        135deg, 
+        #e9f8ff 0%, 
+        #f7fcff 58%, 
+        #fff9df 100%
+    ); 
+}
+button, 
+a { font: inherit; }
+a { 
+    color: inherit; 
+    text-decoration: none; 
+}
+/* =========================
+   2. KHUNG TRANG
+========================= */
+.page-shell { 
+    width: min(
+        100% - 32px, 
+        1120px
+    ); 
+    margin: 0 auto; 
+    padding: 32px 0 0; 
+}
+/* =========================
+   3. THANH ĐIỀU HƯỚNG
+========================= */
+.topbar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    min-height: 92px; 
+    padding: 14px 34px; 
+    border-radius: 48px; 
+    background: rgba(255,255,255,.9); 
+    box-shadow: 0 10px 32px rgba(47, 111, 171, .08); 
+}
+/* =========================
+   4. LOGO VÀ CÁC NÚT
+========================= */
+.brand { 
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: clamp(1.7rem, 4vw, 2.55rem);
+    font-weight: 900;
+    letter-spacing: -.04em;
+}
+.logo {
+    display: block;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    object-fit: contain;
+    opacity: 1;
+    border: none;
+    background: transparent;
+}
+.popup-logo {
+    display: block;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    object-fit: contain;
+    opacity: 1;
+    border: none;
+    background: transparent;
+}
+/* Sửa lỗi logo popup bị nhảy lên trên chữ */
+.popup-brand {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px; /* Khoảng cách giữa logo và chữ */
+    color: #2864b3; /* Giữ màu xanh đồng bộ */
+    font-weight: 900;
+}
+.placeholder {
+     display: block; 
+     border: none; 
+     background: transparent; 
+     opacity: 1; object-fit: contain; 
+}
+.logo-placeholder { 
+    width: 72px; 
+    height: 64px; 
+    border-radius: 20px; 
+}
+.nav-actions {
+     display: flex; 
+     align-items: center; 
+     gap: 22px; 
+}
+.icon-button { 
+    border: 0; 
+    background: transparent; 
+    color: #2864b3; 
+    cursor: pointer; 
+    font-size: 2.4rem; 
+    line-height: 1; 
+}
+.menu-button { font-size: 2rem; }
+/* =========================
+   5. GIAO DIỆN TRANG CHỦ — HERO
+========================= */
+.hero { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    align-items: center; 
+    gap: 30px; 
+    padding: 66px 5% 76px; 
+}
+.hero-copy { padding-left: 4%; }
+.eyebrow { 
+    margin: 0 0 18px; 
+    color: #3878ca; 
+    font-size: 1.15rem; 
+    font-weight: 700; 
+    letter-spacing: .12em; 
+}
+h1 { 
+    margin: 0; 
+    color: #245bab; 
+    font-size: clamp(3.5rem, 7vw, 6rem); 
+    line-height: .91; 
+    font-weight: 900; 
+    letter-spacing: -.075em; 
+    text-transform: uppercase; 
+}
+h1 span { color: #5e9bea; } 
+h1 strong { color: #42bcb3; }
+.hero-description { 
+    margin: 25px 0; 
+    color: #5b87bc; 
+    font-size: 1.15rem; 
+    font-weight: 700; 
+    line-height: 1.5; 
+}
+.primary-button { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 20px; 
+    padding: 15px 28px; 
+    border-radius: 999px; 
+    background: #4b91e7; 
+    color: white; 
+    box-shadow: 0 9px 0 #3278c9; 
+    font-size: 1.25rem; 
+    font-weight: 900; 
+    transition: transform .2s, box-shadow .2s; 
+}
+.primary-button:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 14px 0 #3278c9; 
+}
+.hero-art { 
+    display: flex; 
+    justify-content: center; 
+}
+.flask-placeholder { 
+    width: min(100%, 430px); 
+    height: 330px; 
+    border-radius: 42px; 
+}
+/* =========================
+   6. KHU VỰC KHÁM PHÁ
+========================= */
+.features-section { padding: 30px 5% 40px; }
+.section-heading { 
+    display: flex; 
+    align-items: center; 
+    gap: 18px; 
+    margin-bottom: 32px; 
+}
+.star { 
+    color: #f4bd3e; 
+    font-size: 3.3rem; 
+    line-height: 1; 
+}
+h2 { 
+    margin: 0; 
+    color: #245bab; 
+    font-size: clamp(2.3rem, 5vw, 3.6rem); 
+    line-height: 1; 
+    font-weight: 900; 
+}
+.section-heading p { 
+    margin: 12px 0 0; 
+    color: #5b87bc; 
+    font-size: 1.15rem; 
+    font-weight: 700; 
+}
+/* =========================
+   7. CÁC THẺ TÍNH NĂNG
+========================= */
+.feature-grid { 
+    display: grid; 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    gap: 24px; 
+}
+.feature-card { 
+    position: relative; 
+    min-height: 250px; 
+    padding: 24px 34px; 
+    border-radius: 28px; 
+    box-shadow: 0 10px 22px rgba(49, 104, 161, .07); 
+    transition: transform .2s, box-shadow .2s; 
+}
+.feature-card:hover { 
+    transform: translateY(-7px); 
+    box-shadow: 0 17px 30px rgba(49, 104, 161, .14); 
+}
+.card-blue { background: #e7f2ff; } 
+.card-green { background: #e5f8f2; } 
+.card-yellow { background: #fff5dc; } 
+.card-purple { background: #f0edff; }
+.feature-placeholder { width: 150px; 
+    height: 105px; 
+    border-radius: 20px; 
+    margin-bottom: 8px; 
+}
+.feature-content h3 { margin: 0 0 3px;
+    color: #245bab; 
+    font-size: 2rem; 
+    line-height: 1; 
+    font-weight: 900; 
+}
+.feature-content p { 
+    margin: 0; 
+    color: #5b87bc; 
+    font-size: 1.05rem; 
+    font-weight: 700; 
+    line-height: 1.45; 
+}
+.arrow {
+    position: absolute; 
+    right: 25px; 
+    bottom: 24px; 
+    display: grid; 
+    width: 56px; 
+    height: 56px; 
+    place-items: center; 
+    border-radius: 50%; 
+    background: #4b91e7; 
+    color: white; 
+    font-size: 2rem; 
+    font-weight: 800; 
+    }
+.card-green .arrow { background:#35b7a9; }
+.card-yellow .arrow { background:#f4bd3e; }
+.card-purple .arrow { background:#8668e8; }
+/* =========================
+   8. CHÂN TRANG
+========================= */
+.footer { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 22px; 
+    min-height: 170px; 
+    padding: 30px 5% 10px; 
+    color: #3774bb; 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    text-align: center; 
+}
+.footer p { margin: 0; }
+.animal-placeholder { 
+    width: 170px; 
+    height: 120px; 
+    border-radius: 30px; 
+}
+/* =========================
+   9. MENU BẬT LÊN
+========================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(28, 75, 120, .38);
+    backdrop-filter: blur(3px);
+}
+
+.popup-menu {
+    position: fixed;
+    top: 24px;
+    right: max(20px, calc((100vw - 1120px) / 2));
+    z-index: 101;
+
+    width: min(380px, calc(100vw - 32px));
+    padding: 18px;
+    border: 1px solid #d7ebfb;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 15px 45px rgba(38, 100, 179, .2);
+}
+
+.popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 16px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid #e4f1fb;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.popup-header button {
+    border: 0;
+    background: transparent;
+    color: #2864b3;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.popup-menu > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 16px;
+    border-radius: 18px;
+    background: #e7f3ff;
+    font-size: 1.05rem;
+    font-weight: 800;
+    transition: background .2s, transform .2s;
+}
+
+.popup-menu > a:hover {
+    background: #d6eaff;
+    transform: translateX(3px);
+}
+
+.popup-menu > a span {
+    font-size: 1.7rem;
+}
+
+[hidden] {
+    display: none !important;
+}
+/* =========================
+   10. GIAO DIỆN ĐIỆN THOẠI
+========================= */
+@media (max-width: 700px) {
+    .page-shell { 
+        width: min(100% - 20px, 560px); 
+        padding-top: 12px; 
+    }
+    .topbar { 
+        min-height: 70px; 
+        padding: 10px 17px; 
+        border-radius: 28px; 
+    }
+    .brand { gap: 10px; font-size: 1.3rem; }
+    .logo-placeholder { width: 48px; height: 44px; }
+    .nav-actions { gap: 8px; }
+    .icon-button { font-size: 1.8rem; }
+    .menu-button { font-size: 1.5rem; }
+    .hero { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+        padding: 45px 4% 52px; 
+        text-align: center; 
+    }
+    .hero-copy { padding: 0; }
+    .eyebrow { font-size: .86rem; }
+    .hero-description { font-size: 1rem; }
+    .primary-button { font-size: 1.05rem; }
+    .flask-placeholder { height: 230px; }
+    .features-section { padding: 20px 4% 30px; }
+    .section-heading { align-items: flex-start; gap: 10px; }
+    .star { font-size: 2.2rem; }
+    .section-heading p { font-size: .95rem; }
+    .feature-grid { grid-template-columns: 1fr; gap: 16px; }
+    .feature-card { min-height: 230px; padding: 22px; }
+    .feature-placeholder { width: 125px; height: 90px; }
+    .feature-content h3 { font-size: 1.75rem; }
+    .feature-content p { font-size: .98rem; }
+    .footer { min-height: 130px; 
+        padding: 20px 2%; 
+        font-size: 1rem; 
+    }
+    .animal-placeholder { width: 90px; height: 75px; } 
+}

@@ -1,0 +1,277 @@
+* { box-sizing: border-box; }
+:root { 
+    font-family: "Nunito", sans-serif; 
+    color: #2360aa; 
+    background: #eaf8ff; 
+}
+html { scroll-behavior: smooth; }
+
+body { 
+    margin: 0; 
+    min-width: 320px; 
+    min-height: 100vh; 
+    overflow-x: hidden; 
+    background: linear-gradient(
+        135deg, 
+        #dff3ff 0%, 
+        #f4fbff 52%, 
+        #f9faff 100%
+    ); 
+}
+
+body::before, body::after { 
+    content: ""; 
+    position: fixed; 
+    z-index: -1; 
+    width: 280px; 
+    height: 160px; 
+    border-radius: 50%; 
+    background: rgba(177, 219, 246, .26); 
+    filter: blur(1px); 
+}
+body::before { top: -32px; left: -80px; } 
+body::after { right: -90px; bottom: 80px; }
+
+a, button, input { font: inherit; } 
+a { color: inherit; text-decoration: none; }
+
+.page-shell { 
+    position: relative; 
+    width: min(100% - 40px, 950px); 
+    min-height: 100vh; 
+    margin: 0 auto; 
+    padding-top: 30px; 
+}
+
+/* Topbar Header */
+.topbar { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    min-height: 76px; 
+    padding: 10px 28px; 
+    border-radius: 50px; 
+    background: rgba(255,255,255,.88); 
+    box-shadow: 0 10px 25px rgba(49, 116, 177, .06); 
+}
+.brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 16px; 
+    color: #1c5ba7; 
+    font-size: clamp(1.5rem, 3vw, 2.1rem); 
+    font-weight: 900; 
+    letter-spacing: -.03em; 
+}
+.placeholder { 
+    display: block; 
+    border: none; 
+    background: transparent; 
+    object-fit: contain; 
+}
+.logo-placeholder { width: 48px; height: 48px; }
+.nav-actions { display: flex; align-items: center; gap: 18px; }
+.icon-button { border: 0; background: transparent; color: #2360aa; cursor: pointer; line-height: 1; }
+.search-button { font-size: 2.2rem; transform: rotate(-20deg); }
+.menu-button { font-size: 1.8rem; }
+
+/* Các ảnh Illustration trang trí (Desktop) */
+.decor { 
+    position: absolute; 
+    pointer-events: none; 
+    object-fit: contain; 
+    transition: all 0.3s ease;
+}
+.decor-atom { top: 150px; left:20px; width: 95px; }
+.decor-tube { top: 290px; left: 15px; width: 75px; transform: rotate(-15deg); }
+.decor-star-top { top: 160px; left: 200px; width: 38px; }
+.decor-heart-top { top: 160px; right: 50px; width: 100px; }
+.decor-molecule-right { top: 320px; right: 20px; width: 88px; }
+
+/* Section & Card Đăng nhập */
+.login-section { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    padding: 40px 0 0; 
+}
+
+.login-card {
+    position: relative;
+    width: min(100% - 40px, 680px); 
+    margin-top: 75px;
+    padding: 75px 50px 50px; 
+    border: 2px solid #d8ecf8;
+    border-radius: 48px; 
+    background: rgba(255, 255, 255, 0.9); 
+    box-shadow: 0 20px 40px rgba(180, 215, 240, 0.28); 
+    text-align: center; 
+}
+
+/* Bình thí nghiệm đè nổi trên mép khung */
+.hero-flask { 
+    position: absolute;
+    top: -80px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 155px; 
+    height: 155px;
+    object-fit: contain;
+    z-index: 10;
+}
+
+/* Tiêu đề Đăng nhập */
+h1 { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px 0 0; 
+    color: #175ca8; 
+    font-size: 3.2rem; 
+    font-weight: 900; 
+}
+.spark-mark { color: #72b3ee; font-size: 1.6rem; font-weight: 700; }
+
+.welcome { 
+    margin: 10px 0 8px; 
+    color: #7191b1; 
+    font-size: 0.95rem; 
+    font-weight: 700; 
+    line-height: 1.4; 
+}
+.heart-divider { margin-bottom: 22px; color: #5b91d4; font-size: 1.8rem; line-height: 1; }
+
+/* Ô Nhập Dữ Liệu */
+.login-form { display: flex; flex-direction: column; gap: 16px; }
+.input-wrap {
+    display: flex; 
+    align-items: center; 
+    gap: 14px; 
+    min-height: 72px; 
+    padding: 0 28px; 
+    border: 2px solid #c6e1f3; 
+    border-radius: 999px; 
+    background: rgba(230, 243, 253, .65); 
+    text-align: left; 
+}
+.field-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #3472b9; width: 22px; height: 22px; }
+.field-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lock-icon { transform: none; }
+
+.input-wrap input {
+    width: 100%; 
+    min-width: 0; 
+    border: 0; 
+    outline: 0; 
+    background: transparent; 
+    color: #3b6d9f; 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+}
+
+.password-toggle { 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0; 
+    background: transparent;
+    color: #8295aa; 
+    cursor: pointer; 
+    width: 28px; height: 28px;       
+    padding: 0; margin-left: auto; flex-shrink: 0;     
+}
+.password-toggle svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.submit-button {
+    min-height: 72px; 
+    margin-top: 6px; 
+    border: 0; 
+    border-radius: 999px; 
+    background: linear-gradient(100deg, #5e9be8, #4c88de); 
+    color: white; 
+    cursor: pointer; 
+    box-shadow: 0 5px 0 #3677c5; 
+    font-size: 1.45rem; 
+    font-weight: 900; 
+    transition: transform .2s, box-shadow .2s; 
+}
+.submit-button:hover { transform: translateY(-3px); box-shadow: 0 8px 0 #3677c5; }
+.submit-button span { margin-left: 8px; font-size: 1.3rem; }
+
+.signup { margin: 22px 0 0; color: #708da9; font-size: 0.95rem; font-weight: 700; }
+.signup a { color: #4d86cb; font-weight: 900; }
+.signup span { color: #f4c04b; margin-left: 4px; }
+
+/* Footer */
+.footer { display: flex; align-items: flex-end; justify-content: space-between; min-height: 160px; padding-top: 20px; }
+.footer-art { width: 190px; height: 140px; object-fit: contain; }
+.footer-decoration { color: #f2c452; font-size: 2rem; margin-bottom: 50px; }
+
+
+/* ==========================================
+   GIAO DIỆN MOBILE / MÀN HÌNH NHỎ (<= 700px)
+   ========================================== */
+@media (max-width: 700px) { 
+    .page-shell { 
+        width: min(100% - 20px, 480px); 
+        padding-top: 15px; 
+    }
+    .topbar { 
+        min-height: 64px; 
+        padding: 8px 18px; 
+        border-radius: 30px; 
+    }
+    .brand { font-size: 1.3rem; gap: 10px; }
+    .logo-placeholder { width: 38px; height: 38px; }
+    .search-button { font-size: 1.8rem; }
+    .menu-button { font-size: 1.5rem; }
+
+    /* Ẩn bớt các hình trang trí lớn trên mobile để đỡ chật màn hình */
+    .decor-atom, .decor-tube, .decor-star-top, .decor-heart-top, .decor-molecule-right { 
+        display: none; 
+    }
+
+    .login-section { padding-top: 45px; }
+    
+    .login-card { 
+        width: 100%;
+        margin-top: 45px;
+        padding: 50px 20px 30px; 
+        border-radius: 30px; 
+    }
+
+    .hero-flask { 
+        width: 100px; 
+        height: 100px; 
+        top: -50px;
+    }
+
+    h1 { font-size: 1.8rem; }
+    .spark-mark { font-size: 1.3rem; }
+    .welcome { font-size: 0.85rem; }
+    .heart-divider { font-size: 1.5rem; margin-bottom: 16px; }
+
+    .input-wrap { 
+        min-height: 50px; 
+        padding: 0 16px; 
+        gap: 10px; 
+    }
+    .input-wrap input { font-size: 0.95rem; }
+    .field-icon { width: 18px; height: 18px; }
+    .password-toggle { width: 24px; height: 24px; }
+
+    .submit-button { 
+        min-height: 50px; 
+        font-size: 1.1rem; 
+        box-shadow: 0 4px 0 #3677c5; 
+    }
+    .submit-button:hover { box-shadow: 0 6px 0 #3677c5; }
+
+    .signup { font-size: 0.85rem; margin-top: 16px; }
+
+    .footer { min-height: 120px; padding-top: 10px; }
+    .footer-art { width: 95px; height: 75px; }
+    .footer-decoration { font-size: 1.5rem; margin-bottom: 30px; }
+}

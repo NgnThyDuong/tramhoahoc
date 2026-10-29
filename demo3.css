@@ -116,22 +116,6 @@ a {
     line-height: 1; 
 }
 .menu-button { font-size: 2rem; }
-.btn-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 15px;
-    font-family: 'Nunito', sans-serif;
-}
-.btn-item span {
-    font-size: 14px; 
-    font-weight: 700; 
-   letter-spacing: normal;
-}
-.btn-icon {
-    flex-shrink: 0;
-    color: inherit; 
-}
 /* =========================
    5. GIAO DIỆN TRANG CHỦ — HERO
 ========================= */
@@ -319,11 +303,10 @@ h2 {
     top: 24px;
     right: max(20px, calc((100vw - 1120px) / 2));
     z-index: 101;
-
-    width: min(380px, calc(100vw - 32px));
-    padding: 18px;
+    width: min(360px, calc(100vw - 32px));
+    padding: 12px;
     border: 1px solid #d7ebfb;
-    border-radius: 28px;
+    border-radius: 24px;
     background: rgba(255, 255, 255, .97);
     box-shadow: 0 15px 45px rgba(38, 100, 179, .2);
 }
@@ -332,11 +315,12 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 8px;
+    padding: 4px 4px 10px;
     padding-bottom: 16px;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     border-bottom: 1px solid #e4f1fb;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 900;
 }
 
@@ -373,6 +357,41 @@ h2 {
 
 [hidden] {
     display: none !important;
+}
+.popup-menu > a.btn-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+
+    min-height: 44px;
+    margin-top: 8px;
+    padding: 10px 12px;
+
+    border-radius: 15px;
+    background: #e4f1ff;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+.popup-menu .btn-icon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+}
+
+.popup-menu > a.btn-item > span:first-of-type {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+.popup-menu > a.btn-item > span:last-child {
+    flex: 0 0 auto;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+.popup-menu > a.btn-item:hover {
+    background: #d6eaff;
 }
 /* =========================
    10. GIAO DIỆN ĐIỆN THOẠI
@@ -417,4 +436,9 @@ h2 {
         font-size: 1rem; 
     }
     .animal-placeholder { width: 90px; height: 75px; } 
+    .popup-menu {
+       top: 16px;
+       right: 16px;
+       width: min(360px, calc(100vw - 32px));
+    }
 }

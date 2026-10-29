@@ -124,7 +124,8 @@ a {
 }
 .btn-item span {
     font-size: 14px; 
-    font-weight: 500; 
+    font-weight: 600; 
+   letter-spacing: normal;
 }
 .btn-icon {
     flex-shrink: 0;

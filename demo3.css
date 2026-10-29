@@ -126,6 +126,10 @@ a {
     font-size: 15px; 
     font-weight: 500; 
 }
+.btn-icon {
+    flex-shrink: 0;
+    color: inherit; 
+}
 /* =========================
    5. GIAO DIỆN TRANG CHỦ — HERO
 ========================= */

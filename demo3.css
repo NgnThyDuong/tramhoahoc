@@ -116,6 +116,16 @@ a {
     line-height: 1; 
 }
 .menu-button { font-size: 2rem; }
+.btn-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+}
+.btn-item span {
+    font-size: 15px; 
+    font-weight: 500; 
+}
 /* =========================
    5. GIAO DIỆN TRANG CHỦ — HERO
 ========================= */

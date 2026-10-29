@@ -121,10 +121,11 @@ a {
     align-items: center;
     gap: 12px;
     font-size: 15px;
+    font-family: 'Nunito', sans-serif;
 }
 .btn-item span {
     font-size: 14px; 
-    font-weight: 600; 
+    font-weight: 700; 
    letter-spacing: normal;
 }
 .btn-icon {
